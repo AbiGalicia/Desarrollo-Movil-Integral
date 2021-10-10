@@ -1,65 +1,18 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
-import { Card } from 'react-native-paper';
-import styled from 'styled-components/native';
+import { StyleSheet } from 'react-native'
 import { SvgXml } from 'react-native-svg';
 import estrella from '../../../../assets/estrella';
 import closed from '../../../../assets/closed';
-
-const StoreCard = styled(Card)`
-    background-color: ${(props) => props.theme.colors.bg.primary};
-`;
-
-const StoreCardCover = styled(Card.Cover)`
-    padding: ${(props) => props.theme.space[4]};
-    background-color: ${(props) => props.theme.colors.bg.primary};
-`;
-
-const Title = styled.Text`
-    font-family: ${(props) => props.theme.fonts.heading};
-    font-size: ${(props) => props.theme.fontSizes.body};
-    color: ${(props) => props.theme.colors.text.primary}
-`;
-
-const Address = styled(Text)`
-    font-family: ${(props) => props.theme.fonts.body};
-    font-size: ${(props) => props.theme.fontSizes.caption};
-`;
-
-const Info = styled(View)`
-    padding: ${(props) => props.theme.space[3]};
-`;
-
-const Rating = styled(View)`
-    flex-direction: row;
-    padding-top: ${(props) => props.theme.space[2]};
-    padding-bottom: ${(props) => props.theme.space[2]};
-`;
-
-const Sectionn = styled(View)`
-    flex-direction: row;
-    align-items: center;
-`;
-
-const SectionEnd = styled(View)`
-    flex: 1;
-    flex-direction: row;
-    justify-content: flex-end;
-`;
-
-const Icon = styled(Image)`
-    width: 25px;
-    height: 25px;
-    margin-left: ${(props) => props.theme.space[3]};
-`;
-
-const TemporarilyClosed = styled.Text`
-    font-family: ${(props) => props.theme.fonts.heading};
-    font-size: ${(props) => props.theme.fontSizes.body};
-    color: ${(props) => props.theme.colors.text.error};
-    padding-right: ${(props) => props.theme.space[6]};
-`;
-
+import {StoreCard,
+        StoreCardCover,
+        Title,
+        Address,
+        Info,
+        Rating,
+        Sectionn,
+        SectionEnd,
+        Icon,
+        TemporarilyClosed}from "./StoreInfoStyles";
 
 
 export const StoreInfo = ({ store = {} }) => {
@@ -72,8 +25,10 @@ export const StoreInfo = ({ store = {} }) => {
         rating = 4,
         isClosedTemporarity = true,
     } = store;
+
     const ratingArray = Array.from(new Array(Math.floor(rating)));
     console.log(ratingArray);
+
     return (
         <StoreCard elevation={5}>
             <StoreCardCover
